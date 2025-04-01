@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eid Mubarak Celebration</title>
+    <title>ঈদ মোবারক | Eid Mubarak</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
@@ -18,7 +16,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Hind Siliguri', sans-serif;
             background-color: #0a1128;
             color: #fff;
             overflow-x: hidden;
@@ -27,14 +25,14 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(to bottom, #0a1128, #1a2a57);
+            background: linear-gradient(135deg, #0a1128 0%, #1a2a57 100%);
             overflow: hidden;
             padding: 20px;
         }
@@ -50,70 +48,93 @@
             box-shadow: 0 0 30px #f9f3e0, 0 0 60px #f9f3e0;
             animation: 
                 glow 3s infinite alternate,
-                float 4s ease-in-out infinite;
+                float 6s ease-in-out infinite;
+            z-index: 1;
         }
 
         @keyframes glow {
-            from { box-shadow: 0 0 20px #f9f3e0; }
-            to { box-shadow: 0 0 40px #f9f3e0, 0 0 80px #f9f3e0aa; }
+            0% { box-shadow: 0 0 20px #f9f3e0; }
+            100% { box-shadow: 0 0 40px #f9f3e0, 0 0 80px #f9f3e0aa; }
         }
 
         @keyframes float {
-            0%, 0% { transform: translateY(0); }
-            0% { transform: translateY(-0px); }
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         /* Typography */
         h1 {
             font-family: 'Amiri', serif;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             margin-bottom: 1rem;
             color: #f9d71c;
             text-shadow: 0 0 10px rgba(249, 215, 28, 0.5);
+            position: relative;
+            z-index: 2;
         }
 
         .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: clamp(1rem, 3vw, 1.3rem);
             margin-bottom: 2rem;
             max-width: 600px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
         }
 
         /* Stories Section */
         .stories {
-            padding: 80px 20px;
+            padding: 60px 20px;
             background-color: #1a2a57;
             text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f9d71c;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .story-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         /* Story Cards */
         .story-item {
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
+            perspective: 1000px;
         }
 
         .story-card {
             width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
             margin-bottom: 10px;
+            border: 1px solid rgba(249, 215, 28, 0.2);
+            transform-style: preserve-3d;
         }
 
         .story-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) rotateX(3deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         .story-card::before {
@@ -122,70 +143,87 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, #f9d71c, #e6a919);
         }
 
         .story-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
             color: #f9d71c;
         }
 
         .story-title {
             font-family: 'Amiri', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
+            color: #f9d71c;
         }
 
         .story-preview {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             opacity: 0.9;
+            margin-bottom: 10px;
         }
 
         /* Expanded Story Content */
         .story-full {
             max-height: 0;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 0 0 15px 15px;
-            transition: max-height 0.5s ease;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 0 0 12px 12px;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            text-align: left;
+            line-height: 1.8;
         }
 
         .story-full-content {
-            padding: 20px;
-            font-size: 0.9rem;
-            text-align: left;
+            padding: 15px;
         }
 
         .story-card.active + .story-full {
             max-height: 500px;
+            padding: 15px;
         }
 
         /* Advertisement Spaces */
         .ad-container {
             width: 100%;
             max-width: 728px;
-            margin: 30px auto;
-            padding: 15px;
+            margin: 25px auto;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border-radius: 6px;
             text-align: center;
             min-height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
         }
 
         .ad-container p {
             color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
         }
 
         /* Footer */
         footer {
-            padding: 30px;
+            padding: 30px 20px;
             text-align: center;
             background: #0a1128;
+            border-top: 1px solid rgba(249, 215, 28, 0.1);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
 
         /* Responsive Adjustments */
@@ -196,8 +234,26 @@
             }
             
             .ad-container {
-                min-height: 50px;
-                padding: 10px;
+                min-height: 70px;
+                padding: 8px;
+            }
+            
+            .story-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 20px 15px;
+            }
+            
+            .stories {
+                padding: 40px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -207,28 +263,27 @@
     <section class="hero">
         <div class="moon"></div>
         <h1>ঈদ মোবারক!</h1>
-        <p class="subtitle">চাঁদের আলোয় রাঙা হোক ঈদের সকাল,
-সুখ-শান্তি ছুঁয়ে যাক তোমার জীবন! 🌙✨🕊️
-ঈদ মোবারক!</p>
+        <p class="subtitle">চাঁদের আলোয় রাঙা হোক ঈদের সকাল,<br>
+        সুখ-শান্তি ছুঁয়ে যাক তোমার জীবন! 🌙✨🕊️<br>
+        ঈদ মোবারক!</p>
         <div class="ad-container">
-            <p><script type="text/javascript">
-	atOptions = {
-		'key' : 'b927f0b5e072a23260ba0f830fc063a8',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/b927f0b5e072a23260ba0f830fc063a8/invoke.js"></script></p>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'b927f0b5e072a23260ba0f830fc063a8',
+                    'format': 'iframe',
+                    'height': 60,
+                    'width': 468,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/b927f0b5e072a23260ba0f830fc063a8/invoke.js"></script>
         </div>
     </section>
 
     <!-- Stories Section -->
     <section class="stories">
-        <h2>এই ঈদে হৃদয় আলোকিত হোক
-</h2>
-        <p>আবিষ্কার করুন ঈদের আনন্দে ভরা হৃদয়ছোঁয়া গল্পগুলো</p>
+        <h2 class="section-title">এই ঈদে হৃদয় আলোকিত হোক</h2>
+        <p class="section-subtitle">আবিষ্কার করুন ঈদের আনন্দে ভরা হৃদয়ছোঁয়া গল্পগুলো</p>
         
         <div class="story-container">
             <!-- Story 1 -->
@@ -240,7 +295,7 @@
                 </div>
                 <div class="story-full">
                     <div class="story-full-content">
-                        এই ঈদে প্রতিটি মুহূর্ত হোক হাসি, আনন্দ ও ভালোবাসার রঙে রাঙানো। প্রিয়জনদের সঙ্গে কাটানো প্রতিটি ক্ষণ হোক গভীর শান্তি ও খুশিতে ভরপুর। ঈদের আলোয় আলোকিত হোক প্রতিটি হৃদয়, পরিবারে আসুক সুখ-সমৃদ্ধির অফুরন্ত ধারা। উষ্ণতা, স্নেহ, ভালোবাসা ও মমতায় ঘেরা এক সুন্দর ঈদ হোক সবার জন্য, যেখানে শান্তি ও আনন্দের ছোঁয়ায় ভরে উঠবে প্রতিটি দিন।** <em>"This is my sweetest Eid ever!"</em>
+                        <p>এই ঈদে প্রতিটি মুহূর্ত হোক হাসি, আনন্দ ও ভালোবাসার রঙে রাঙানো। প্রিয়জনদের সঙ্গে কাটানো প্রতিটি ক্ষণ হোক গভীর শান্তি ও খুশিতে ভরপুর। ঈদের আলোয় আলোকিত হোক প্রতিটি হৃদয়, পরিবারে আসুক সুখ-সমৃদ্ধির অফুরন্ত ধারা। উষ্ণতা, স্নেহ, ভালোবাসা ও মমতায় ঘেরা এক সুন্দর ঈদ হোক সবার জন্য, যেখানে শান্তি ও আনন্দের ছোঁয়ায় ভরে উঠবে প্রতিটি দিন।</p>
                     </div>
                 </div>
             </div>
@@ -249,28 +304,28 @@
             <div class="story-item">
                 <div class="story-card" onclick="toggleStory(this)">
                     <div class="story-icon">👭</div>
-                    <h3 class="story-title"> তোমার পরিবার....</h3>
-                    <p class="story-preview">****এই ঈদে তোমার পরিবারে হাসি, আনন্দ ও ভালোবাসায় পূর্ণ মুহূর্ত কাটুক, শান্তি ও সুখে।...</p>
+                    <h3 class="story-title">তোমার পরিবার</h3>
+                    <p class="story-preview">এই ঈদে তোমার পরিবারে হাসি, আনন্দ ও ভালোবাসায় পূর্ণ মুহূর্ত কাটুক...</p>
                 </div>
                 <div class="story-full">
                     <div class="story-full-content">
-                        **এই ঈদে তোমার পরিবারকে নিয়ে প্রতিটি মুহূর্ত হাসি, আনন্দ এবং ভালোবাসায় ভরে উঠুক। প্রিয়জনদের সঙ্গে কাটানো সময় হোক অমূল্য স্মৃতিতে পূর্ণ। তোমার পরিবারের প্রতিটি সদস্যের হৃদয় ঈদের খুশিতে ঝলমল করুক, আর সবার জীবনে শান্তি, সুখ ও সমৃদ্ধি বর্ষিত হোক। ভালোবাসা, স্নেহ এবং আনন্দে পূর্ণ এক অপরূপ ঈদ উদযাপন হোক, যেখানে একসঙ্গে থাকা, হাসিমুখে খাওয়া-দাওয়া এবং আনন্দ ভাগ করে নেওয়াই হবে সবচেয়ে বড় উপহার।**.
+                        <p>এই ঈদে তোমার পরিবারকে নিয়ে প্রতিটি মুহূর্ত হাসি, আনন্দ এবং ভালোবাসায় ভরে উঠুক। প্রিয়জনদের সঙ্গে কাটানো সময় হোক অমূল্য স্মৃতিতে পূর্ণ। তোমার পরিবারের প্রতিটি সদস্যের হৃদয় ঈদের খুশিতে ঝলমল করুক, আর সবার জীবনে শান্তি, সুখ ও সমৃদ্ধি বর্ষিত হোক। ভালোবাসা, স্নেহ এবং আনন্দে পূর্ণ এক অপরূপ ঈদ উদযাপন হোক, যেখানে একসঙ্গে থাকা, হাসিমুখে খাওয়া-দাওয়া এবং আনন্দ ভাগ করে নেওয়াই হবে সবচেয়ে বড় উপহার।</p>
                     </div>
                 </div>
             </div>
 
             <!-- Middle Advertisement -->
             <div class="ad-container">
-                <p><script type="text/javascript">
-	atOptions = {
-		'key' : '0b0b03fab72cb747cefe33a93f9f8bc2',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/0b0b03fab72cb747cefe33a93f9f8bc2/invoke.js"></script></p>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key': '0b0b03fab72cb747cefe33a93f9f8bc2',
+                        'format': 'iframe',
+                        'height': 250,
+                        'width': 300,
+                        'params': {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/0b0b03fab72cb747cefe33a93f9f8bc2/invoke.js"></script>
             </div>
 
             <!-- Story 3 -->
@@ -282,14 +337,11 @@
                 </div>
                 <div class="story-full">
                     <div class="story-full-content">
-                        একাকী হয়ে যাওয়ার অর্থ হলো তুমি খারাপ সঙ্গ পরিত্যাগ করেছো। কিন্তু একজন ভালো বন্ধু থাকা একাকীত্বের চাইতে উত্তম।
-
-- Hazrat Umar (RA) <em>" Hazrat Umar (RA)"</em>
-
-                        যে ব্যক্তি ধৈর্যধারণ করতে পারবে, সে কখনো সফলতা থেকে বঞ্চিত হবেনা। হয়তোবা সফল হবার জন্য তার একটু বেশি সময় লাগতে পারে।
-
-<em>" হযরত আলী (রাঃ)</em>
+                        <p><strong>হযরত উমর (রা.) এর বাণী:</strong><br>
+                        "একাকী হয়ে যাওয়ার অর্থ হলো তুমি খারাপ সঙ্গ পরিত্যাগ করেছো। কিন্তু একজন ভালো বন্ধু থাকা একাকীত্বের চাইতে উত্তম।"</p>
                         
+                        <p><strong>হযরত আলী (রা.) এর বাণী:</strong><br>
+                        "যে ব্যক্তি ধৈর্যধারণ করতে পারবে, সে কখনো সফলতা থেকে বঞ্চিত হবেনা। হয়তোবা সফল হবার জন্য তার একটু বেশি সময় লাগতে পারে।"</p>
                     </div>
                 </div>
             </div>
@@ -299,19 +351,19 @@
     <!-- Footer -->
     <footer>
         <div class="ad-container">
-            <p><script type="text/javascript">
-	atOptions = {
-		'key' : '1e21d2e260d08c03cab886034eeb8272',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/1e21d2e260d08c03cab886034eeb8272/invoke.js"></script></p>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '1e21d2e260d08c03cab886034eeb8272',
+                    'format': 'iframe',
+                    'height': 90,
+                    'width': 728,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/1e21d2e260d08c03cab886034eeb8272/invoke.js"></script>
         </div>
-        <p>©2025 EID Mubarak Greetings</p>
-        <p>SK KAWSAR</p>
+        <p class="footer-text">© ২০২৫ ঈদ মোবারক শুভেচ্ছা</p>
+        <p class="copyright">SK KAWSAR</p>
     </footer>
 
     <script>
@@ -332,11 +384,26 @@
             if (card.classList.contains('active')) {
                 storyContent.style.maxHeight = storyContent.scrollHeight + 'px';
                 // Smooth scroll to show the expanded content
-                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                setTimeout(() => {
+                    card.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest',
+                        inline: 'nearest'
+                    });
+                }, 100);
             } else {
                 storyContent.style.maxHeight = '0';
             }
         }
+
+        // Initialize - close all stories on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.story-card').forEach(card => {
+                card.classList.remove('active');
+                const content = card.nextElementSibling;
+                content.style.maxHeight = '0';
+            });
+        });
     </script>
 </body>
 </html>
